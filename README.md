@@ -12,10 +12,6 @@
 
 <br>
 
-<p align="center">
-  <img alt="Moveit" src=".github/icon.svg" width="160px">
-</p>
-
 ## 🧪 Technologies
 
 This project was developed using the following technologies:
