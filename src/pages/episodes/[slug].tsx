@@ -8,7 +8,9 @@ import Link from "next/link";
 import styles from "../../styles/episode.module.scss";
 import { convertDurationToTimeString } from "../../utils/convertDurationToTimeString";
 import Image from "next/image";
-// import { Container } from './styles';
+import { usePlayer } from "../../contexts/PlayerContext";
+import Head from "next/head";
+
 type Episode = {
   id: string;
   title: string;
@@ -26,8 +28,13 @@ type EpisodeProps = {
 };
 
 const Episode: React.FC<EpisodeProps> = ({ episode }) => {
+  const { play } = usePlayer();
+
   return (
     <div className={styles.episode}>
+      <Head>
+        <title>{episode.title} | Podcastr</title>
+      </Head>
       <div className={styles.thumbnailContainer}>
         <Link href="/">
           <button type="button">
@@ -40,7 +47,7 @@ const Episode: React.FC<EpisodeProps> = ({ episode }) => {
           src={episode.thumbnail}
           objectFit="cover"
         />
-        <button type="button">
+        <button type="button" onClick={() => play(episode)}>
           <img src="/play.svg" alt="Tocar episódio" />
         </button>
       </div>
