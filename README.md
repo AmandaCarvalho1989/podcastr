@@ -12,6 +12,11 @@
 
 <br>
 
+
+##  Visit
+
+https://podcastr-amandacarvalho1989.vercel.app/
+
 ## 🧪 Technologies
 
 This project was developed using the following technologies:
